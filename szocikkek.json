@@ -1,0 +1,322 @@
+[
+  {
+    "id": "arkovy",
+    "name": "Dr. Árkövy József",
+    "years": "1851 – 1922",
+    "dept": "Fogorvostudományi Kar",
+    "featured": true,
+    "img": "kepek/arkovy_jozsef.jpg",
+    "docx_file": "- Árkövy József (Fogorvostudományi Kar) -.docx",
+    "bio": "<p><b>Dr. Árkövy József</b> (1851–1922) a magyar fogászat és stomatológia úttörője, a Budapesti Tudományegyetem első fogászati professzora és a Stomatológiai Klinika megalapítója.</p><p>Kiemelkedő szerepet játszott az egyetemi szintű fogorvosképzés megteremtésében Magyarországon, nemzetközileg elismert szakmunka és kutatások fűződnek a nevéhez a fogszuvasodás és a szájbetegségek kóroktana terén.</p>"
+  },
+  {
+    "id": "balassa",
+    "name": "Dr. Balassa János",
+    "years": "1814 – 1868",
+    "dept": "Sebészeti Klinika",
+    "featured": true,
+    "img": "kepek/balassa_janos.jpg",
+    "docx_file": "- Balassa János (Sebészeti Klinika) -.docx",
+    "bio": "<p><b>Dr. Balassa János</b> (1814–1868) a modern magyar sebészet megteremtője, egyetemi tanár, a szabadságharc orvoskari igazgatója.</p><p>A műtéti anesztézia (étergőzös altatás), az operatív sebészet, a sérvműtétek és a plasztikai sebészet úttörője volt hazánkban. Munkásságával európai színvonalra emelte a pesti sebészeti klinikát.</p>"
+  },
+  {
+    "id": "balogh",
+    "name": "Dr. Balogh Károly",
+    "years": "1895 – 1973",
+    "dept": "Fogorvostudományi Kar",
+    "featured": true,
+    "img": "kepek/balogh_karoly.jpg",
+    "docx_file": "- Balogh Károly (Fogorvostudományi Kar) -.docx",
+    "bio": "<p><b>Dr. Balogh Károly</b> (1895–1973) nemzetközileg elismert fogorvos professzor, a Fogászati Klinika igazgatója és a szájsebészeti oktatás kiemelkedő alakja.</p><p>A Fogorvostudományi Kar megalakításának egyik kulcsfigurája, a szájsebészeti és fogászati képzés modernizációjának irányítója.</p>"
+  },
+  {
+    "id": "fodor",
+    "name": "Fodor József",
+    "years": "1843 – 1901",
+    "dept": "Közegészségtani Tanszék",
+    "featured": true,
+    "img": "kepek/fodor_jozsef.jpg",
+    "docx_file": "- Fodor József (Közegészségtani Tanszék) -.docx",
+    "bio": "<p><b>Fodor József</b> (1843–1901) a közegészségtan és hygiéne nemzetközileg elismert úttörője, az egyetemi Közegészségtani Tanszék megalapítója.</p><p>A bakteriológia, az ivóvíz-higiéné és az iskolaegészségügy terén végzett kutatásai alapvevő jelentőségűek a hazai és nemzetközi közegészségügy történetében.</p>"
+  },
+  {
+    "id": "kelemen",
+    "name": "Dr. Kelemen Endre",
+    "years": "1921 – 2000",
+    "dept": "Belgyógyászati és Onkológiai Klinika",
+    "featured": true,
+    "img": "kepek/kelemen_endre.jpg",
+    "docx_file": "- Kelemen Ende (Belgyógyászati és Onkológiai Klinika) -.docx",
+    "bio": "<p><b>Dr. Kelemen Endre</b> (1921–2000) Kossuth-díjas belgyógyász, hematológus professzor, az MTA doktora.</p><p>Az őssejtkutatás és a csontvelő-transzplantáció hazai megalapozója. Vezetésével hajtották végre az első sikeres hazai csontvelő-átültetést.</p>"
+  },
+  {
+    "id": "kerpel",
+    "name": "Dr. Kerpel-Fronius Ödön",
+    "years": "1906 – 1984",
+    "dept": "Gyermekgyógyászati Klinika",
+    "featured": true,
+    "img": "kepek/kerpel_fronius_odon.jpg",
+    "docx_file": "- Kerpel-Fronius Ödön (Gyermekgyógyászati Klinika) -.docx",
+    "bio": "<p><b>Dr. Kerpel-Fronius Ödön</b> (1906–1984) Kossuth-díjas gyermekgyógyász, akadémikus, egyetemi tanár.</p><p>A gyermekkori só- és vízháztartási zavarok, valamint a csecsemőkori kiszáradás patomechanizmusának nemzetközileg úttörő kutatója.</p>"
+  },
+  {
+    "id": "koranyi",
+    "name": "Dr. Korányi Sándor",
+    "years": "1866 – 1944",
+    "dept": "Belgyógyászati és Onkológiai Klinika",
+    "featured": true,
+    "img": "kepek/koranyi_sandor.jpg",
+    "docx_file": "- Korányi Sándor (Belgyógyászati és Onkológiai Klinika) -.docx",
+    "bio": "<p><b>Dr. Korányi Sándor</b> (1866–1944) belgyógyász, akadémikus, a magyar belgyógyászat legnagyobb iskolateremtő egyénisége.</p><p>A funkcionális belgyógyászati szemlélet megteremtője, a veseelégtelenség patomechanizmusának leírója, a nefrológia tudományának egyik nemzetközi megalapozója.</p>"
+  },
+  {
+    "id": "rusznyak",
+    "name": "Dr. Rusznyák István",
+    "years": "1889 – 1974",
+    "dept": "Belgyógyászati- és Onkológiai Klinika",
+    "featured": true,
+    "img": "kepek/rusznyak_istvan.jpg",
+    "docx_file": "- Rusznyák István (Belgyógyászati- és Onkológiai Klinika) -.docx",
+    "bio": "<p><b>Dr. Rusznyák István</b> (1889–1974) Kossuth-díjas belgyógyász, az MTA elnöke (1949–1970), az MTA Kísérleti Orvostudományi Kutatóintézet (KOKI) alapító főigazgatója.</p><p>Korányi Sándor tanítványa, a nyirokkeringés élettani és kórtani kutatásának nemzetközileg elismert vezéralakja.</p>"
+  },
+  {
+    "id": "schaffer",
+    "name": "Dr. Schaffer Károly",
+    "years": "1864 – 1939",
+    "dept": "Neurológiai Klinika",
+    "featured": true,
+    "img": "kepek/schaffer_karoly.jpg",
+    "docx_file": "- Schaffer Károly (Neurológiai Klinika) -.docx",
+    "bio": "<p><b>Dr. Schaffer Károly</b> (1864–1939) ideggyógyász, akadémikus, a magyar neurohisztológia és neuropatológia megalapítója.</p><p>Az agykérgi idegsejtek és a hippocampus szövettani szerkezetének nemzetközi hírű kutatója, az úgynevezett Schaffer-kollaterálisok leírója.</p>"
+  },
+  {
+    "id": "semmelweis",
+    "name": "Semmelweis Ignác",
+    "years": "1818 – 1865",
+    "dept": "Szülészeti és Nőgyógyászati Klinika",
+    "featured": true,
+    "img": "kepek/semmelweis_ignac.jpg",
+    "docx_file": "- Semmelweis Ignác (Szülészeti és Nőgyógyászati Klinika) -.docx",
+    "bio": "<p><b>Semmelweis Ignác</b> (1818–1865) szülészorvos, egyetemi tanár, az 'anyák megmentője'.</p><p>A gyermekágyi láz kóroktanának felfedezője és a klórvizes kézmosási antiseptikum bevezetője. Felfedezése az orvostudomány történetének egyik legjelentősebb áttörése.</p>"
+  },
+  {
+    "id": "szentagothai",
+    "name": "Dr. Szentágothai János",
+    "years": "1912 – 1994",
+    "dept": "Anatómiai, Szövet- és Fejlődéstani Intézet",
+    "featured": true,
+    "img": "kepek/szentagothai_janos.jpg",
+    "docx_file": "- Szentágothai János (Anatómiai, Szövet- és Fejlődéstani Intézet) -.docx",
+    "bio": "<p><b>Dr. Szentágothai János</b> (1912–1994) Kossuth-díjas neuroanatómus, az MTA elnöke (1976–1985), egyetemi tanár.</p><p>Világhírű agykutató, a kisagy és az agykéreg mikroszkópos szerkezetének és működésének nemzetközi szaktekintélye, iskolateremtő anatómiai atlaszok és tankönyvek szerzője.</p>"
+  },
+  {
+    "id": "acs",
+    "name": "Ács Tamás",
+    "years": "1920 – 1990",
+    "dept": "Anatómiai, Szövet- és Fejlődéstani Intézet",
+    "featured": false,
+    "img": "kepek/acs_tamas.jpg",
+    "docx_file": "Ács Tamás (Anatómiai, Szövet- és Fejlődéstani Intézet).docx",
+    "bio": "<p><b>Ács Tamás</b> (1920–1990) biológus, egyetemi docens.</p><p>Kulcsszerepet játszott a Semmelweis Egyetem 1983-ban indított német nyelvű orvosképzésének megszervezésében és operatív irányításában.</p>"
+  },
+  {
+    "id": "barta",
+    "name": "Dr. Barta Lajos",
+    "years": "1912 – 2000",
+    "dept": "Gyermekgyógyászati Klinika",
+    "featured": false,
+    "img": "kepek/barta_lajos.jpg",
+    "docx_file": "Barta Lajos (Gyermekgyógyászati Klinika).docx",
+    "bio": "<p><b>Dr. Barta Lajos</b> (1912–2000) gyermekgyógyász, egyetemi tanár, a magyar gyermekdiabetológia megalapítója.</p><p>Úttörő szerepet játszott a gyermekkori cukorbetegség gyógyításában, gondozási hálózatának és nyári táborozási rendszerének kiépítésében.</p>"
+  },
+  {
+    "id": "banoczy",
+    "name": "Dr. Bánóczy Jolán",
+    "years": "1929 – 2016",
+    "dept": "Fogorvostudományi Kar",
+    "featured": false,
+    "img": "kepek/banoczy_jolan.jpg",
+    "docx_file": "Bánóczy Jolán (Fogorvostudományi Kar).docx",
+    "bio": "<p><b>Dr. Bánóczy Jolán</b> (1929–2016) fogorvos professzor, a Fogorvostudományi Kar korábbi dékánja, a WHO szakértője.</p><p>Az orális medicina, a leukoplakia és a preventív fogászat nemzetközileg elismert kutatója.</p>"
+  },
+  {
+    "id": "barsony",
+    "name": "Dr. Bársony János",
+    "years": "1860 – 1926",
+    "dept": "Szülészeti és Nőgyógyászati Klinika",
+    "featured": false,
+    "img": "kepek/barsony_janos.jpg",
+    "docx_file": "Bársony János (Szülészeti és Nőgyógyászati Klinika).docx",
+    "bio": "<p><b>Dr. Bársony János</b> (1860–1926) szülész-nőgyógyász professzor, az egyetem korábbi rektora.</p><p>A méhen kívüli terhesség műtéti eljárásainak és a nőgyógyászati sugárterápia hazai bevezetésének kiemelkedő alakja.</p>"
+  },
+  {
+    "id": "bekefi",
+    "name": "Dr. Békefi Dezső",
+    "years": "1941 – 2024",
+    "dept": "Gyermekgyógyászati Klinika",
+    "featured": false,
+    "img": "kepek/bekefi_dezso.jpg",
+    "docx_file": "Békefi Dezső (Gyermekgyógyászati Klinika).docx",
+    "bio": "<p><b>Dr. Békefi Dezső</b> (1941–2024) gyermekgyógyász, neonatológus, a Bókay Klinika Gyermek Intenzív Osztályának megszervezője és első vezetője.</p>"
+  },
+  {
+    "id": "bene",
+    "name": "Bene Ferenc",
+    "years": "1775 – 1858",
+    "dept": "Különös kór- és gyógytan",
+    "featured": false,
+    "img": "kepek/bene_ferenc.jpg",
+    "docx_file": "Bene Ferenc (Különös kór- és gyógytan).docx",
+    "bio": "<p><b>Bene Ferenc</b> (1775–1858) orvosdoktor, egyetemi tanár, dékán, rektor, a védőoltások (himlőoltás) hazai elterjesztője és az orvosi oktatás átszervezője.</p>"
+  },
+  {
+    "id": "berentey",
+    "name": "Dr. Berentey György",
+    "years": "1925 – 2004",
+    "dept": "Traumatológiai Klinika",
+    "featured": false,
+    "img": "kepek/berentey_gyorgy.jpg",
+    "docx_file": "Berentey György (Traumatológiai Klinika).docx",
+    "bio": "<p><b>Dr. Berentey György</b> (1925–2004) sebész, traumatológus professzor, a hazai baleseti sebészeti oktatás és tanszék megalapítója.</p>"
+  },
+  {
+    "id": "berenyi",
+    "name": "Dr. Berényi Béla",
+    "years": "1911 – 2005",
+    "dept": "Fogorvostudományi Kar",
+    "featured": false,
+    "img": "kepek/berenyi_bela.jpg",
+    "docx_file": "Berényi Béla (Fogorvostudományi Kar).docx",
+    "bio": "<p><b>Dr. Berényi Béla</b> (1911–2005) fogorvos, szájsebész professzor, a Fogorvostudományi Kar korábbi dékánja.</p>"
+  },
+  {
+    "id": "blaskovics",
+    "name": "Dr. Blaskovics László",
+    "years": "1869 – 1938",
+    "dept": "Szemészeti Klinika",
+    "featured": false,
+    "img": "kepek/blaskovics_laszlo.jpg",
+    "docx_file": "Blaskovics László (Szemészeti Klinika).docx",
+    "bio": "<p><b>Dr. Blaskovics László</b> (1869–1938) nemzetközi hírű szemész professzor, a szemészeti plasztikai műtétek és a ptosis-műtétek úttörője.</p>"
+  },
+  {
+    "id": "boros",
+    "name": "Dr. Boros Sándor",
+    "years": "1907 – 1987",
+    "dept": "Fogorvostudományi Kar",
+    "featured": false,
+    "img": "kepek/boros_sandor.jpg",
+    "docx_file": "Boros Sándor (Fogorvostudományi Kar).docx",
+    "bio": "<p><b>Dr. Boros Sándor</b> (1907–1987) fogorvos, egyetemi docens, a Konzerváló Fogászati Klinika igazgatója, a fogászati patológia oktatásának megteremtője.</p>"
+  },
+  {
+    "id": "bokai_jun",
+    "name": "Dr. Bókai János jun.",
+    "years": "1858 – 1937",
+    "dept": "Gyermekgyógyászati Klinika",
+    "featured": false,
+    "img": "kepek/bokai_janos_jun.jpg",
+    "docx_file": "Bókai János jun. (Gyermekgyógyászati Klinika).docx",
+    "bio": "<p><b>Dr. Bókai János jun.</b> (1858–1937) gyermekgyógyász professzor, a gyermekklinika igazgatója, a herpes zoster és a bárányhimlő összefüggésének felismerője.</p>"
+  },
+  {
+    "id": "bokai_sen",
+    "name": "Dr. Bókai János sen.",
+    "years": "1822 – 1884",
+    "dept": "Gyermekgyógyászati Klinika",
+    "featured": false,
+    "img": "kepek/bokai_janos_sen.jpg",
+    "docx_file": "Bókai János sen. (Gyermekgyógyászati Klinika).docx",
+    "bio": "<p><b>Dr. Bókai János sen.</b> (1822–1884) a Stefánia Gyermekkórház megalapítója, a gyermekkórtan első egyetemi tanára Pesten.</p>"
+  },
+  {
+    "id": "clauder",
+    "name": "Dr. Clauder Ottó Ervin",
+    "years": "1907 – 1985",
+    "dept": "Gyógyszerészi Szerves Vegytan",
+    "featured": false,
+    "img": "kepek/clauder_otto.jpg",
+    "docx_file": "Clauder Ottó (Gyógyszerészi Szerves Vegytan).docx",
+    "bio": "<p><b>Dr. Clauder Ottó Ervin</b> (1907–1985) gyógyszerészvegyész, egyetemi tanár, a Szerves Kémiai Intézet igazgatója, számtalan gyógyszerszabadalom alkotója.</p>"
+  },
+  {
+    "id": "csaba",
+    "name": "Dr. Csaba György",
+    "years": "1929 – 2020",
+    "dept": "Molekuláris Biológiai Tanszék",
+    "featured": false,
+    "img": "kepek/csaba_gyorgy.jpg",
+    "docx_file": "Csaba György (Molekuláris Biológiai Tanszék).docx",
+    "bio": "<p><b>Dr. Csaba György</b> (1929–2020) kutatóorvos, professzor, a Biológiai Intézet alapítója, a hormonális imprinting jelenségének nemzetközi felfedezője.</p>"
+  },
+  {
+    "id": "cserhati",
+    "name": "Dr. Cserháti Endre",
+    "years": "1932 – 2025",
+    "dept": "Gyermekgyógyászati Klinika",
+    "featured": false,
+    "img": "kepek/cserhati_endre.jpg",
+    "docx_file": "Cserháti Endre (Gyermekgyógyászati Klinika).docx",
+    "bio": "<p><b>Dr. Cserháti Endre</b> (1932–2025) gyermekgyógyász, az MTA doktora, a gyermekkori allergológia és pulmonológia hazai úttörője.</p>"
+  },
+  {
+    "id": "csiba",
+    "name": "Dr. Csiba Árpád",
+    "years": "1928 – 2004",
+    "dept": "Fogorvostudományi Kar",
+    "featured": false,
+    "img": "kepek/csiba_arpad.jpg",
+    "docx_file": "Csiba Árpád (Fogorvostudományi Kar).docx",
+    "bio": "<p><b>Dr. Csiba Árpád</b> (1928–2004) fogorvos, az orális patológia és az odontogén daganatok elismert professzora.</p>"
+  },
+  {
+    "id": "csomor",
+    "name": "Dr. Csömör Sándor",
+    "years": "1919 – 2007",
+    "dept": "Szülészeti és Nőgyógyászati Klinika",
+    "featured": false,
+    "img": "kepek/csomor_sandor.jpg",
+    "docx_file": "Csömör Sándor (Szülészeti és Nőgyógyászati Klinika).docx",
+    "bio": "<p><b>Dr. Csömör Sándor</b> (1919–2007) szülész-nőgyógyász professzor, az I. sz. Szülészeti Klinika igazgatója, a Perinatális Intenzív Centrum (PIC) megteremtője.</p>"
+  },
+  {
+    "id": "denes",
+    "name": "Dr. Dénes József",
+    "years": "1939 – 1999",
+    "dept": "Fogorvostudományi Kar",
+    "featured": false,
+    "img": "kepek/denes_jozsef.jpg",
+    "docx_file": "Dénes József (Fogorvostudományi Kar).docx",
+    "bio": "<p><b>Dr. Dénes József</b> (1939–1999) fogorvos, a gyermekfogászat és fogszabályozás elismert oktatója.</p>"
+  },
+  {
+    "id": "entz",
+    "name": "Dr. Entz László",
+    "years": "1951 – 2023",
+    "dept": "Érsebészeti Tanszék",
+    "featured": false,
+    "img": "kepek/entz_laszlo.jpg",
+    "docx_file": "Entz László (Érsebészeti Tanszék).docx",
+    "bio": "<p><b>Dr. Entz László</b> (1951–2023) érsebész professzor, a rekonstrukciós érsebészet nemzetközileg elismert szaktekintélye.</p>"
+  },
+  {
+    "id": "fabian_g",
+    "name": "Dr. Fábián Gábor",
+    "years": "1962 – 2016",
+    "dept": "Fogorvostudományi Kar",
+    "featured": false,
+    "img": "kepek/fabian_gabor.jpg",
+    "docx_file": "Fábián Gábor (Fogorvostudományi Kar).docx",
+    "bio": "<p><b>Dr. Fábián Gábor</b> (1962–2016) fogorvos, a gyermekfogászati és fogszabályozási klinika elhivatott egyetemi docense.</p>"
+  },
+  {
+    "id": "fabian_t",
+    "name": "Dr. Fábián Tibor",
+    "years": "1934 – 2019",
+    "dept": "Fogorvostudományi Kar",
+    "featured": false,
+    "img": "kepek/fabian_tibor.jpg",
+    "docx_file": "Fábián Tibor (Fogorvostudományi Kar).docx",
+    "bio": "<p><b>Dr. Fábián Tibor</b> (1934–2019) a Fogpótlástani Klinika volt igazgatója, a fogászati protetika professzora.</p>"
+  }
+]
