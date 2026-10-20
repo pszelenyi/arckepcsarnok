@@ -390,8 +390,8 @@
                 <input type="text" id="searchInput" placeholder="Keresés név vagy kar/klinika alapján..." onkeyup="filterCards()">
             </div>
             <div class="filter-buttons">
-                <button class="filter-btn active" id="btnAll" onclick="setFilter('all')">Összes szócikk (30)</button>
-                <button class="filter-btn featured-btn" id="btnFeatured" onclick="setFilter('featured')">★ Kiemelt professzorok (10)</button>
+                <button class="filter-btn active" id="btnAll" onclick="setFilter('all')">Összes szócikk</button>
+                <button class="filter-btn featured-btn" id="btnFeatured" onclick="setFilter('featured')">★ Kiemelt professzorok</button>
             </div>
         </div>
 
@@ -418,44 +418,35 @@
     </div>
 
     <script>
-        // --- Adatbázis (30 professzor adatai a 10 kiemelt jelölésével) ---
-        const doctors = [
-            // 10 Kiemelt professzor (featured: true)
-            { id: "arkovy", name: "Dr. Árkövy József", years: "1851 – 1922", dept: "Fogorvostudományi Kar", featured: true, img: "kepek/arkovy_jozsef.jpg", bio: "A magyar fogászat és stomatológia egyik legkiemelkedőbb úttörője, a Stomatológiai Klinika megalapítója és az egyetemi fogászati oktatás megteremtője." },
-            { id: "balassa", name: "Dr. Balassa János", years: "1814 – 1868", dept: "Sebészeti Klinika", featured: true, img: "kepek/balassa_janos.jpg", bio: "A modern magyar sebészet megteremtője, az anesztézia, a műtéti eljárások és a plasztikai sebészet hazai úttörője." },
-            { id: "balogh", name: "Dr. Balogh Károly", years: "1895 – 1973", dept: "Fogorvostudományi Kar", featured: true, img: "kepek/balogh_karoly.jpg", bio: "Nemzetközileg elismert fogorvos professzor, a Fogászati Klinika igazgatója és a szájsebészeti oktatás meghatározó alakja." },
-            { id: "fodor", name: "Fodor József", years: "1843 – 1901", dept: "Közegészségtani Tanszék", featured: true, img: "kepek/fodor_jozsef.jpg", bio: "A közegészségtan és hygiéne nemzetközileg elismert úttörője, az egyetemi Közegészségtani Tanszék megalapítója." },
-            { id: "kelemen", name: "Dr. Kelemen Endre", years: "1921 – 2000", dept: "Belgyógyászati és Onkológiai Klinika", featured: true, img: "kepek/kelemen_endre.jpg", bio: "Kiemelkedő hematológus professzor, az őssejtkutatás és az első hazai csontvelő-transzplantáció úttörője." },
-            { id: "kerpel", name: "Dr. Kerpel-Fronius Ödön", years: "1906 – 1984", dept: "Gyermekgyógyászati Klinika", featured: true, img: "kepek/kerpel_fronius_odon.jpg", bio: "Kossuth-díjas gyermekgyógyász, a gyermekkori só- és vízháztartási zavarok világviszonylatban elismert kutatója." },
-            { id: "koranyi", name: "Dr. Korányi Sándor", years: "1866 – 1944", dept: "Belgyógyászati és Onkológiai Klinika", featured: true, img: "kepek/koranyi_sandor.jpg", bio: "A funkcionális belgyógyászati szemlélet megteremtője, a veseelégtelenség patomechanizmusának leírója." },
-            { id: "rusznyak", name: "Dr. Rusznyák István", years: "1889 – 1974", dept: "Belgyógyászati- és Onkológiai Klinika", featured: true, img: "kepek/rusznyak_istvan.jpg", bio: "A Magyar Tudományos Akadémia hosszú ideig regnáló elnöke, a nyirokkeringés élettani kutatója." },
-            { id: "schaffer", name: "Dr. Schaffer Károly", years: "1864 – 1939", dept: "Neurológiai Klinika", featured: true, img: "kepek/schaffer_karoly.jpg", bio: "A magyar agykutatás és idegkórtan kimagasló professzora, szövettani kutató." },
-            { id: "semmelweis", name: "Semmelweis Ignác", years: "1818 – 1865", dept: "Szülészeti és Nőgyógyászati Klinika", featured: true, img: "kepek/semmelweis_ignac.jpg", bio: "Az 'anyák megmentője', a gyermekágyi láz okának felfedezője és a klórvizes kézmosási antiseptikum úttörője." },
-
-            // 20 Standard professzor (featured: false)
-            { id: "barta", name: "Dr. Barta Lajos", years: "1912 – 2000", dept: "Gyermekgyógyászati Klinika", featured: false, img: "kepek/barta_lajos.jpg", bio: "Kiemelkedő gyermekgyógyász, a gyermekkori endokrinológia és metabolikus betegségek szakértője." },
-            { id: "banoczy", name: "Dr. Bánóczy Jolán", years: "1929 – 2016", dept: "Fogorvostudományi Kar", featured: false, img: "kepek/banoczy_jolan.jpg", bio: "A Fogorvostudományi Kar korábbi dékánja, az orális medicina nemzetközi hírű professzora." },
-            { id: "barsony", name: "Dr. Bársony János", years: "1860 – 1926", dept: "Szülészeti és Nőgyógyászati Klinika", featured: false, img: "kepek/barsony_janos.jpg", bio: "Szülész-nőgyógyász professzor, az operatív szülészet elismert képviselője." },
-            { id: "bene", name: "Bene Ferenc", years: "1775 – 1858", dept: "Különös kór- és gyógytan", featured: false, img: "kepek/bene_ferenc.jpg", bio: "Orvosdoktor, egyetemi tanár, a himlőoltás hazai elterjesztője." },
-            { id: "berentey", name: "Dr. Berentey György", years: "1925 – 2004", dept: "Traumatológiai Klinika", featured: false, img: "kepek/berentey_gyorgy.jpg", bio: "A hazai traumatológia és baleseti sebészet iskolateremtő professzora." },
-            { id: "berenyi", name: "Dr. Berényi Béla", years: "1911 – 2005", dept: "Fogorvostudományi Kar", featured: false, img: "kepek/berenyi_bela.jpg", bio: "A szájsebészet és fogászat professzora, szakkönyvek szerzője." },
-            { id: "bekefi", name: "Dr. Békefi Dezső", years: "1941 – 2024", dept: "Gyermekgyógyászati Klinika", featured: false, img: "kepek/bekefi_dezso.jpg", bio: "Elismert gyermekgyógyász és neonatológus, a koraszülött-ellátás szakértője." },
-            { id: "blaskovics", name: "Dr. Blaskovics László", years: "1869 – 1938", dept: "Szemészeti Klinika", featured: false, img: "kepek/blaskovics_laszlo.jpg", bio: "Világhírű szemész professzor, a szemhéj- és plasztikai műtétek újítója." },
-            { id: "boros", name: "Dr. Boros Sándor", years: "1907 – 1987", dept: "Fogorvostudományi Kar", featured: false, img: "kepek/boros_sandor.jpg", bio: "Fogorvos professzor, a konzerváló fogászat és protetika oktatója." },
-            { id: "bokai_jun", name: "Dr. Bókai János jun.", years: "1858 – 1937", dept: "Gyermekgyógyászati Klinika", featured: false, img: "kepek/bokai_janos_jun.jpg", bio: "A gyermekklinika igazgatója, a modern magyar gyermekgyógyászat meghatározó alakja." },
-            { id: "bokai_sen", name: "Dr. Bókai János sen.", years: "1822 – 1884", dept: "Gyermekgyógyászati Klinika", featured: false, img: "kepek/bokai_janos_sen.jpg", bio: "A Stefánia Gyermekkórház megalapítója és a gyermekkórtan első egyetemi tanára." },
-            { id: "clauder", name: "Dr. Clauder Ottó", years: "1907 – 1985", dept: "Gyógyszerészi Szerves Vegytan", featured: false, img: "kepek/clauder_otto.jpg", bio: "Kiváló gyógyszerészvegyész, a gyógyszerészi szerves kémiai kutatások vezetője." },
-            { id: "csaba", name: "Dr. Csaba György", years: "1929 – 2020", dept: "Molekuláris Biológiai Tanszék", featured: false, img: "kepek/csaba_gyorgy.jpg", bio: "Nemzetközileg elismert humánbiológus, a hormonális receptorok kutatója." },
-            { id: "cserhati", name: "Dr. Cserháti Endre", years: "1932 – 2025", dept: "Gyermekgyógyászati Klinika", featured: false, img: "kepek/cserhati_endre.jpg", bio: "A gyermekkori allergológia és pulmonológia hazai úttörője." },
-            { id: "csiba", name: "Dr. Csiba Árpád", years: "1928 – 2004", dept: "Fogorvostudományi Kar", featured: false, img: "kepek/csiba_arpad.jpg", bio: "A szájpatológia és fogászati kórbonctan elismert professzora." },
-            { id: "csomor", name: "Dr. Csömör Sándor", years: "1919 – 2007", dept: "Szülészeti és Nőgyógyászati Klinika", featured: false, img: "kepek/csomor_sandor.jpg", bio: "A I. sz. Szülészeti és Nőgyógyászati Klinika volt igazgatója." },
-            { id: "denes", name: "Dr. Dénes József", years: "1939 – 1999", dept: "Fogorvostudományi Kar", featured: false, img: "kepek/denes_jozsef.jpg", bio: "A gyermekfogászat és fogszabályozás elismert oktatója." },
-            { id: "entz", name: "Dr. Entz László", years: "1951 – 2023", dept: "Érsebészeti Tanszék", featured: false, img: "kepek/entz_laszlo.jpg", bio: "Nemzetközileg elismert érsebész professzor, a rekonstrukciós érsebészet szaktekintélye." },
-            { id: "fabian_g", name: "Dr. Fábián Gábor", years: "1962 – 2016", dept: "Fogorvostudományi Kar", featured: false, img: "kepek/fabian_gabor.jpg", bio: "A gyermekfogászati és fogszabályozási klinika elhivatott oktatója." },
-            { id: "fabian_t", name: "Dr. Fábián Tibor", years: "1934 – 2019", dept: "Fogorvostudományi Kar", featured: false, img: "kepek/fabian_tibor.jpg", bio: "A Fogpótlástani Klinika volt igazgatója, a fogászati protetika professzora." }
-        ];
-
+        let doctors = [];
         let currentFilter = 'all';
+
+        // --- JSON Adatfájl Dinamikus Beolvasása ---
+        fetch('szocikkek.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Nem sikerült betölteni a szocikkek.json fájlt.');
+                }
+                return response.json();
+            })
+            .then(data => {
+                doctors = data;
+                updateButtonCounts();
+                renderContent(doctors);
+            })
+            .catch(error => {
+                console.error('Hiba:', error);
+                document.getElementById('contentArea').innerHTML = `
+                    <p style="text-align:center; padding: 2rem; color: #d9534f; font-weight: bold;">
+                        Hiba történt a szócikkek betöltésekor. Győződj meg róla, hogy a <code>szocikkek.json</code> fájl fel van töltve az <code>index.html</code> mellé!
+                    </p>`;
+            });
+
+        function updateButtonCounts() {
+            const featuredCount = doctors.filter(d => d.featured).length;
+            document.getElementById('btnAll').innerText = `Összes szócikk (${doctors.length})`;
+            document.getElementById('btnFeatured').innerText = `★ Kiemelt professzorok (${featuredCount})`;
+        }
 
         // Kártya HTML generálása
         function createCardHTML(doc) {
@@ -483,18 +474,15 @@
             const featuredDocs = data.filter(d => d.featured);
             const regularDocs = data.filter(d => !d.featured);
 
-            // Ha az "Összes" van kiválasztva ÉS nincs keresési kifejezés: Külön blokkokban jelennek meg
             const isSearching = document.getElementById('searchInput').value.trim().length > 0;
 
             if (currentFilter === 'all' && !isSearching) {
-                // 1. Kiemeltek szekciója
                 if (featuredDocs.length > 0) {
                     contentArea.innerHTML += `
                         <div class="section-title">★ Kiemelt professzorok (${featuredDocs.length})</div>
                         <div class="grid">${featuredDocs.map(createCardHTML).join('')}</div>
                     `;
                 }
-                // 2. Többi professzor szekciója
                 if (regularDocs.length > 0) {
                     contentArea.innerHTML += `
                         <div class="section-title regular-title">Minden szócikk (${regularDocs.length})</div>
@@ -502,7 +490,6 @@
                     `;
                 }
             } else {
-                // Kereséskor vagy külön szűréskor egyetlen közös rács
                 if (data.length === 0) {
                     contentArea.innerHTML = '<p style="text-align:center; padding: 2rem; color: #666;">Nincs a keresésnek megfelelő találat.</p>';
                 } else {
@@ -546,7 +533,7 @@
             document.getElementById('modalTitle').innerText = doc.name;
             document.getElementById('modalYears').innerText = doc.years;
             document.getElementById('modalDept').innerText = doc.dept;
-            document.getElementById('modalBody').innerHTML = `<p>${doc.bio}</p>`;
+            document.getElementById('modalBody').innerHTML = doc.bio;
             
             const modalImg = document.getElementById('modalImg');
             modalImg.src = doc.img;
@@ -564,9 +551,6 @@
                 closeModal();
             }
         }
-
-        // Kezdeti kirajzolás
-        renderContent(doctors);
     </script>
 </body>
 </html>
