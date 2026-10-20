@@ -391,7 +391,7 @@
             </div>
             <div class="filter-buttons">
                 <button class="filter-btn active" id="btnAll" onclick="setFilter('all')">Összes szócikk</button>
-                <button class="filter-btn featured-btn" id="btnFeatured" onclick="setFilter('featured')">★ Kiemelt professzorok</button>
+                <button class="filter-btn featured-btn" id="btnFeatured" onclick="setFilter('featured')">★ Kiemelt személyiségek</button>
             </div>
         </div>
 
@@ -445,7 +445,7 @@
         function updateButtonCounts() {
             const featuredCount = doctors.filter(d => d.featured).length;
             document.getElementById('btnAll').innerText = `Összes szócikk (${doctors.length})`;
-            document.getElementById('btnFeatured').innerText = `★ Kiemelt professzorok (${featuredCount})`;
+            document.getElementById('btnFeatured').innerText = `★ Kiemelt személyiségek (${featuredCount})`;
         }
 
         // Kártya HTML generálása
@@ -479,7 +479,7 @@
             if (currentFilter === 'all' && !isSearching) {
                 if (featuredDocs.length > 0) {
                     contentArea.innerHTML += `
-                        <div class="section-title">★ Kiemelt professzorok (${featuredDocs.length})</div>
+                        <div class="section-title">★ Kiemelt személyiségek (${featuredDocs.length})</div>
                         <div class="grid">${featuredDocs.map(createCardHTML).join('')}</div>
                     `;
                 }
