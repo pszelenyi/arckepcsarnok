@@ -1,707 +1,572 @@
 <!DOCTYPE html>
-
 <html lang="hu">
-
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Arcképcsarnok - Semmelweis Egyetem</title>
-
     <style>
-
         /* --- Semmelweis Arculati Színek & Alapstílusok --- */
-
         :root {
-
-            --se-navy: #002F6C;      /* Semmelweis Sötétkék */
-
-            --se-gold: #C5A059;      /* Akadémiai Arany */
-
-            --se-light-bg: #F4F6F9;  /* Világosszürke háttér */
-
+            --se-navy: #002F6C;        /* Semmelweis Sötétkék */
+            --se-gold: #C5A059;        /* Akadémiai Arany */
+            --se-gold-light: #FFFBF2;  /* Kiemelt kártyák háttere */
+            --se-light-bg: #F4F6F9;    /* Oldal háttere */
             --card-bg: #FFFFFF;
-
             --text-dark: #222222;
-
             --text-muted: #666666;
-
             --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-
             --transition: all 0.25s ease-in-out;
-
         }
-
- 
 
         * {
-
             box-sizing: border-box;
-
             margin: 0;
-
             padding: 0;
-
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
         }
-
- 
 
         body {
-
             background-color: var(--se-light-bg);
-
             color: var(--text-dark);
-
             line-height: 1.6;
-
         }
-
- 
 
         /* --- Fejléc / Header --- */
-
         header {
-
             background-color: var(--se-navy);
-
             color: white;
-
-            padding: 2rem 1rem;
-
+            padding: 2.5rem 1rem;
             text-align: center;
-
             border-bottom: 5px solid var(--se-gold);
-
             box-shadow: var(--shadow);
-
         }
-
- 
 
         header h1 {
-
-            font-size: 2.2rem;
-
+            font-size: 2.4rem;
             letter-spacing: 1px;
-
-            margin-bottom: 0.5rem;
-
+            margin-bottom: 0.4rem;
             text-transform: uppercase;
-
         }
-
- 
 
         header p {
-
-            font-size: 1.1rem;
-
+            font-size: 1.15rem;
             color: var(--se-gold);
-
             font-weight: 300;
-
         }
-
- 
-
-        /* --- Kereső és Szűrősáv --- */
 
         .container {
-
-            max-width: 1200px;
-
+            max-width: 1250px;
             margin: 0 auto;
-
             padding: 2rem 1rem;
-
         }
 
- 
+        /* --- Kereső és Szűrősáv --- */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
 
         .search-bar {
-
-            margin-bottom: 2rem;
-
-            display: flex;
-
-            justify-content: center;
-
+            width: 100%;
+            max-width: 580px;
         }
-
- 
 
         .search-bar input {
-
             width: 100%;
-
-            max-width: 500px;
-
-            padding: 0.8rem 1.2rem;
-
+            padding: 0.9rem 1.4rem;
             font-size: 1rem;
-
             border: 2px solid #D0D7DE;
-
             border-radius: 30px;
-
             outline: none;
-
             transition: var(--transition);
-
             box-shadow: var(--shadow);
-
         }
-
- 
 
         .search-bar input:focus {
-
             border-color: var(--se-navy);
-
-            box-shadow: 0 0 8px rgba(0, 47, 108, 0.3);
-
+            box-shadow: 0 0 12px rgba(0, 47, 108, 0.25);
         }
 
- 
+        .filter-buttons {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            background-color: white;
+            border: 2px solid var(--se-navy);
+            color: var(--se-navy);
+            padding: 0.6rem 1.4rem;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--se-navy);
+            color: white;
+        }
+
+        .filter-btn.featured-btn {
+            border-color: var(--se-gold);
+            color: #8A6D29;
+            background-color: #FFFDF7;
+        }
+
+        .filter-btn.featured-btn:hover, .filter-btn.featured-btn.active {
+            background-color: var(--se-gold);
+            color: white;
+        }
+
+        /* --- Szekció Címek --- */
+        .section-title {
+            color: var(--se-navy);
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin: 2rem 0 1.2rem 0;
+            padding-bottom: 0.5rem;
+            border-bottom: 3px solid var(--se-gold);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-title.regular-title {
+            border-bottom-color: var(--se-navy);
+        }
 
         /* --- Csempe Rácsszerkezet (Grid) --- */
-
         .grid {
-
             display: grid;
-
-            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 1.5rem;
-
+            margin-bottom: 2rem;
         }
 
- 
-
+        /* Normál Kártya */
         .card {
-
             background-color: var(--card-bg);
-
             border-radius: 8px;
-
             overflow: hidden;
-
             box-shadow: var(--shadow);
-
-            border-top: 4px solid var(--se-navy);
-
-            padding: 1.5rem;
-
+            border: 1px solid #E2E8F0;
+            border-top: 5px solid var(--se-navy);
+            padding: 1.2rem;
             display: flex;
-
-            flex-direction: column;
-
-            justify-content: space-between;
-
+            gap: 1rem;
+            position: relative;
             transition: var(--transition);
-
             cursor: pointer;
-
         }
-
- 
 
         .card:hover {
-
-            transform: translateY(-5px);
-
-            border-top-color: var(--se-gold);
-
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
         }
 
- 
+        /* Kiemelt Kártya Stílus */
+        .card.featured {
+            border: 2px solid var(--se-gold);
+            border-top: 6px solid var(--se-gold);
+            background: linear-gradient(135deg, #FFFDF7 0%, #FFF9EC 100%);
+            box-shadow: 0 4px 18px rgba(197, 160, 89, 0.22);
+        }
+
+        .card.featured:hover {
+            box-shadow: 0 10px 28px rgba(197, 160, 89, 0.35);
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--se-gold);
+            color: white;
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 12px;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+
+        .card-img {
+            width: 75px;
+            height: 95px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 1px solid #D0D0D0;
+            flex-shrink: 0;
+            background-color: #EAEAEA;
+        }
+
+        .card.featured .card-img {
+            border: 2px solid var(--se-gold);
+        }
+
+        .card-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 100%;
+        }
 
         .card h3 {
-
             color: var(--se-navy);
-
-            font-size: 1.25rem;
-
-            margin-bottom: 0.4rem;
-
+            font-size: 1.1rem;
+            line-height: 1.3;
+            margin-bottom: 0.2rem;
+            padding-right: 50px;
         }
-
- 
 
         .card .years {
-
             color: var(--se-gold);
-
-            font-weight: bold;
-
-            font-size: 0.95rem;
-
-            margin-bottom: 0.8rem;
-
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-bottom: 0.4rem;
         }
-
- 
 
         .card .dept {
-
-            font-size: 0.85rem;
-
+            font-size: 0.8rem;
             color: var(--text-muted);
-
             background-color: #EEF2F7;
-
-            padding: 0.3rem 0.6rem;
-
+            padding: 0.2rem 0.5rem;
             border-radius: 4px;
-
             display: inline-block;
-
-            margin-bottom: 1.2rem;
-
+            margin-bottom: 0.5rem;
         }
 
- 
+        .card.featured .dept {
+            background-color: #F7EEDD;
+            color: #7A5C18;
+        }
 
         .card .btn {
-
-            align-self: flex-start;
-
+            font-size: 0.85rem;
             color: var(--se-navy);
-
             font-weight: bold;
-
-            font-size: 0.9rem;
-
-            text-decoration: none;
-
             display: flex;
-
             align-items: center;
-
-            gap: 0.3rem;
-
-            transition: var(--transition);
-
+            gap: 0.2rem;
         }
 
- 
-
-        .card:hover .btn {
-
-            color: var(--se-gold);
-
-            padding-left: 5px;
-
+        .card.featured .btn {
+            color: #8A6D29;
         }
-
- 
 
         /* --- Felugró Modális Ablak (Modal) --- */
-
         .modal-overlay {
-
             position: fixed;
-
             top: 0;
-
             left: 0;
-
             width: 100%;
-
             height: 100%;
-
-            background-color: rgba(0, 0, 0, 0.6);
-
+            background-color: rgba(0, 0, 0, 0.65);
             display: flex;
-
             justify-content: center;
-
             align-items: center;
-
             opacity: 0;
-
             visibility: hidden;
-
             transition: var(--transition);
-
             z-index: 1000;
-
             padding: 1rem;
-
         }
-
- 
 
         .modal-overlay.active {
-
             opacity: 1;
-
             visibility: visible;
-
         }
-
- 
 
         .modal-content {
-
             background-color: white;
-
             border-radius: 10px;
-
-            max-width: 650px;
-
+            max-width: 700px;
             width: 100%;
-
             max-height: 85vh;
-
             overflow-y: auto;
-
             padding: 2rem;
-
             position: relative;
-
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-
-            border-top: 6px solid var(--se-gold);
-
+            border-top: 6px solid var(--se-navy);
         }
 
- 
+        .modal-content.featured-modal {
+            border-top: 6px solid var(--se-gold);
+            background: linear-gradient(180deg, #FFFDF9 0%, #FFFFFF 100%);
+        }
 
         .close-btn {
-
             position: absolute;
-
             top: 1rem;
-
             right: 1.2rem;
-
-            font-size: 1.8rem;
-
+            font-size: 2rem;
             background: none;
-
             border: none;
-
             color: var(--text-muted);
-
             cursor: pointer;
-
-            transition: var(--transition);
-
         }
 
- 
-
-        .close-btn:hover {
-
-            color: var(--se-navy);
-
-        }
-
- 
-
-        .modal-header h2 {
-
-            color: var(--se-navy);
-
-            font-size: 1.8rem;
-
-            margin-bottom: 0.2rem;
-
-        }
-
- 
-
-        .modal-header .modal-years {
-
-            color: var(--se-gold);
-
-            font-weight: bold;
-
-            font-size: 1.1rem;
-
-            margin-bottom: 0.5rem;
-
-        }
-
- 
-
-        .modal-header .modal-dept {
-
-            font-size: 0.9rem;
-
-            color: var(--text-muted);
-
+        .modal-header-flex {
+            display: flex;
+            gap: 1.5rem;
             margin-bottom: 1.5rem;
-
             border-bottom: 1px solid #E5E5E5;
-
-            padding-bottom: 1rem;
-
+            padding-bottom: 1.2rem;
         }
 
- 
+        .modal-img {
+            width: 120px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 6px;
+            border: 2px solid var(--se-gold);
+            flex-shrink: 0;
+        }
+
+        .modal-header-info h2 {
+            color: var(--se-navy);
+            font-size: 1.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .modal-years {
+            color: var(--se-gold);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-dept {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            background-color: #F0F4F8;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            display: inline-block;
+        }
 
         .modal-body {
-
             font-size: 1rem;
-
-            color: #333333;
-
+            color: #333;
             line-height: 1.7;
-
         }
 
+        @media (max-width: 600px) {
+            .modal-header-flex {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .card {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .card h3 {
+                padding-right: 0;
+            }
+        }
     </style>
-
 </head>
-
 <body>
 
- 
-
     <header>
-
         <h1>Semmelweis Egyetem</h1>
-
         <p>Online Arcképcsarnok & Digitális Panteon</p>
-
     </header>
 
- 
-
     <div class="container">
-
-        <!-- Keresősáv -->
-
-        <div class="search-bar">
-
-            <input type="text" id="searchInput" placeholder="Keresés név vagy klinika/kar alapján..." onkeyup="filterCards()">
-
+        <!-- Kereső és Szűrők -->
+        <div class="controls">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Keresés név vagy kar/klinika alapján..." onkeyup="filterCards()">
+            </div>
+            <div class="filter-buttons">
+                <button class="filter-btn active" id="btnAll" onclick="setFilter('all')">Összes szócikk (30)</button>
+                <button class="filter-btn featured-btn" id="btnFeatured" onclick="setFilter('featured')">★ Kiemelt professzorok (10)</button>
+            </div>
         </div>
 
- 
-
-        <!-- Csempék Rácsa -->
-
-        <div class="grid" id="cardGrid"></div>
-
+        <!-- Dinamikus Tartalom Terület -->
+        <div id="contentArea"></div>
     </div>
-
- 
 
     <!-- Modális Részletező Ablak -->
-
     <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
-
-        <div class="modal-content">
-
+        <div class="modal-content" id="modalContainer">
             <button class="close-btn" onclick="closeModal()">&times;</button>
-
-            <div class="modal-header">
-
-                <h2 id="modalTitle">Személy Neve</h2>
-
-                <div class="modal-years" id="modalYears">Születési - Elhalálozási év</div>
-
-                <div class="modal-dept" id="modalDept">Szervezeti egység</div>
-
+            <div class="modal-header-flex">
+                <img id="modalImg" src="" alt="" class="modal-img">
+                <div class="modal-header-info">
+                    <h2 id="modalTitle">Személy Neve</h2>
+                    <div class="modal-years" id="modalYears">Születési - Elhalálozási év</div>
+                    <div class="modal-dept" id="modalDept">Szervezeti egység</div>
+                </div>
             </div>
-
             <div class="modal-body" id="modalBody">
-
                 <p>A szócikk részletes tartalma itt fog megjelenni...</p>
-
             </div>
-
         </div>
-
     </div>
 
- 
-
     <script>
-
-        // --- Adatbázis (30 professzor adatai a források alapján) ---
-
+        // --- Adatbázis (30 professzor adatai a 10 kiemelt jelölésével) ---
         const doctors = [
+            // 10 Kiemelt professzor (featured: true)
+            { id: "arkovy", name: "Dr. Árkövy József", years: "1851 – 1922", dept: "Fogorvostudományi Kar", featured: true, img: "kepek/arkovy_jozsef.jpg", bio: "A magyar fogászat és stomatológia egyik legkiemelkedőbb úttörője, a Stomatológiai Klinika megalapítója és az egyetemi fogászati oktatás megteremtője." },
+            { id: "balassa", name: "Dr. Balassa János", years: "1814 – 1868", dept: "Sebészeti Klinika", featured: true, img: "kepek/balassa_janos.jpg", bio: "A modern magyar sebészet megteremtője, az anesztézia, a műtéti eljárások és a plasztikai sebészet hazai úttörője." },
+            { id: "balogh", name: "Dr. Balogh Károly", years: "1895 – 1973", dept: "Fogorvostudományi Kar", featured: true, img: "kepek/balogh_karoly.jpg", bio: "Nemzetközileg elismert fogorvos professzor, a Fogászati Klinika igazgatója és a szájsebészeti oktatás meghatározó alakja." },
+            { id: "fodor", name: "Fodor József", years: "1843 – 1901", dept: "Közegészségtani Tanszék", featured: true, img: "kepek/fodor_jozsef.jpg", bio: "A közegészségtan és hygiéne nemzetközileg elismert úttörője, az egyetemi Közegészségtani Tanszék megalapítója." },
+            { id: "kelemen", name: "Dr. Kelemen Endre", years: "1921 – 2000", dept: "Belgyógyászati és Onkológiai Klinika", featured: true, img: "kepek/kelemen_endre.jpg", bio: "Kiemelkedő hematológus professzor, az őssejtkutatás és az első hazai csontvelő-transzplantáció úttörője." },
+            { id: "kerpel", name: "Dr. Kerpel-Fronius Ödön", years: "1906 – 1984", dept: "Gyermekgyógyászati Klinika", featured: true, img: "kepek/kerpel_fronius_odon.jpg", bio: "Kossuth-díjas gyermekgyógyász, a gyermekkori só- és vízháztartási zavarok világviszonylatban elismert kutatója." },
+            { id: "koranyi", name: "Dr. Korányi Sándor", years: "1866 – 1944", dept: "Belgyógyászati és Onkológiai Klinika", featured: true, img: "kepek/koranyi_sandor.jpg", bio: "A funkcionális belgyógyászati szemlélet megteremtője, a veseelégtelenség patomechanizmusának leírója." },
+            { id: "rusznyak", name: "Dr. Rusznyák István", years: "1889 – 1974", dept: "Belgyógyászati- és Onkológiai Klinika", featured: true, img: "kepek/rusznyak_istvan.jpg", bio: "A Magyar Tudományos Akadémia hosszú ideig regnáló elnöke, a nyirokkeringés élettani kutatója." },
+            { id: "schaffer", name: "Dr. Schaffer Károly", years: "1864 – 1939", dept: "Neurológiai Klinika", featured: true, img: "kepek/schaffer_karoly.jpg", bio: "A magyar agykutatás és idegkórtan kimagasló professzora, szövettani kutató." },
+            { id: "semmelweis", name: "Semmelweis Ignác", years: "1818 – 1865", dept: "Szülészeti és Nőgyógyászati Klinika", featured: true, img: "kepek/semmelweis_ignac.jpg", bio: "Az 'anyák megmentője', a gyermekágyi láz okának felfedezője és a klórvizes kézmosási antiseptikum úttörője." },
 
-            { name: "Dr. Árkövy József", years: "1851 – 1922", dept: "Fogorvostudományi Kar", bio: "A magyar fogászat és stomatológia egyik legkiemelkedőbb úttörője, az egyetemi fogászati oktatás megteremtője." },
-
-            { name: "Dr. Balassa János", years: "1814 – 1868", dept: "Sebészeti Klinika", bio: "A modern magyar sebészet megteremtője, az anesztézia és a műtéti eljárások hazai úttörője." },
-
-            { name: "Dr. Balogh Károly", years: "1895 – 1973", dept: "Fogorvostudományi Kar", bio: "Nemzetközileg elismert fogorvos professzor, a fogászati klinika és szájsebészeti oktatás meghatározó alakja." },
-
-            { name: "Dr. Barta Lajos", years: "1912 – 2000", dept: "Gyermekgyógyászati Klinika", bio: "Kiemelkedő gyermekgyógyász, a gyermekkori endokrinológia és metabolikus betegségek szakértője." },
-
-            { name: "Dr. Bánóczy Jolán", years: "1929 – 2016", dept: "Fogorvostudományi Kar", bio: "A Fogorvostudományi Kar korábbi dékánja, a stomatológia és az orális medicina nemzetközi hírű professzora." },
-
-            { name: "Dr. Bársony János", years: "1860 – 1926", dept: "Szülészeti és Nőgyógyászati Klinika", bio: "Szülész-nőgyógyász professzor, az operatív szülészet és a nőgyógyászati daganatellenes küzdelem képviselője." },
-
-            { name: "Bene Ferenc", years: "1775 – 1858", dept: "Különös kór- és gyógytan", bio: "Orvosdoktor, egyetemi tanár, a himlőoltás hazai elterjesztője és az orvosi oktatás átszervezője." },
-
-            { name: "Dr. Berentey György", years: "1925 – 2004", dept: "Traumatológiai Klinika", bio: "A hazai traumatológia és baleseti sebészet iskolateremtő professzora." },
-
-            { name: "Dr. Berényi Béla", years: "1911 – 2005", dept: "Fogorvostudományi Kar", bio: "A szájsebészet és fogászat professzora, szakkönyvek és egyetemi jegyzetek szerzője." },
-
-            { name: "Dr. Békefi Dezső", years: "1941 – 2024", dept: "Gyermekgyógyászati Klinika", bio: "Elismert gyermekgyógyász és neonatológus, a koraszülött-ellátás elkötelezett művelője." },
-
-            { name: "Dr. Blaskovics László", years: "1869 – 1938", dept: "Szemészeti Klinika", bio: "Világhírű szemész professzor, a szemhéj- és plasztikai műtétek újítója." },
-
-            { name: "Dr. Boros Sándor", years: "1907 – 1987", dept: "Fogorvostudományi Kar", bio: "Fogorvos professzor, a konzerváló fogászat és protetika oktatója." },
-
-            { name: "Dr. Bókai János jun.", years: "1858 – 1937", dept: "Gyermekgyógyászati Klinika", bio: "A gyermekklinika igazgatója, a modern magyar gyermekgyógyászat egyik legnagyobb alakja." },
-
-            { name: "Dr. Bókai János sen.", years: "1822 – 1884", dept: "Gyermekgyógyászati Klinika", bio: "A Stefánia Gyermekkórház megalapítója és a gyermekkórtan első egyetemi tanára." },
-
-            { name: "Dr. Clauder Ottó Ervin", years: "1907 – 1985", dept: "Gyógyszerészi Szerves Vegytan", bio: "Kiváló gyógyszerészvegyész, a gyógyszerészi szerves kémiai kutatások vezetője." },
-
-            { name: "Dr. Csaba György", years: "1929 – 2020", dept: "Molekuláris Biológiai Tanszék", bio: "Nemzetközileg elismert humánbiológus, a hormonális receptorgenezis és receptor-receptivitás kutatója." },
-
-            { name: "Dr. Cserháti Endre", years: "1932 – 2025", dept: "Gyermekgyógyászati Klinika", bio: "A gyermekkori allergológia és pulmonológia úttörője és hazai megalapozója." },
-
-            { name: "Dr. Csiba Árpád", years: "1928 – 2004", dept: "Fogorvostudományi Kar", bio: "A szájpatológia és fogászati kórbonctan elismert professzora." },
-
-            { name: "Dr. Csömör Sándor", years: "1919 – 2007", dept: "Szülészeti és Nőgyógyászati Klinika", bio: "A I. sz. Szülészeti és Nőgyógyászati Klinika volt igazgatója, a nőgyógyászati onkológia szakértője." },
-
-            { name: "Dr. Dénes József", years: "1939 – 1999", dept: "Fogorvostudományi Kar", bio: "A gyermekfogászat és fogszabályozás elismert oktatója és kutatója." },
-
-            { name: "Dr. Entz László", years: "1951 – 2023", dept: "Érsebészeti Tanszék", bio: "Nemzetközileg elismert érsebész professzor, a rekonstrukciós érsebészet szaktekintélye." },
-
-            { name: "Dr. Fábián Gábor", years: "1962 – 2016", dept: "Fogorvostudományi Kar", bio: "A gyermekfogászati és fogszabályozási klinika elhivatott oktatója és kutatója." },
-
-            { name: "Dr. Fábián Tibor", years: "1934 – 2019", dept: "Fogorvostudományi Kar", bio: "A Fogpótlástani Klinika volt igazgatója, a fogászati protetika professzora." },
-
-            { name: "Fodor József", years: "1843 – 1901", dept: "Közegészségtani Tanszék", bio: "A közegészségtan és hygiéne nemzetközileg elismert úttörője, a tanszék megalapítója." },
-
-            { name: "Dr. Kelemen Endre", years: "1921 – 2000", dept: "Belgyógyászati és Onkológiai Klinika", bio: "Kiemelkedő hematológus professzor, az őssejtkutatás és csontvelő-transzplantáció hazai úttörője." },
-
-            { name: "Dr. Kerpel-Fronius Ödön", years: "1906 – 1984", dept: "Gyermekgyógyászati Klinika", bio: "Kossuth-díjas gyermekgyógyász, a gyermekkori só- és vízháztartási zavarok világviszonylatban elismert kutatója." },
-
-            { name: "Dr. Korányi Sándor", years: "1866 – 1944", dept: "Belgyógyászati és Onkológiai Klinika", bio: "A funkcionális belgyógyászati szemlélet megteremtője, a veseelégtelenség patomechanizmusának leírója." },
-
-            { name: "Dr. Rusznyák István", years: "1889 – 1974", dept: "Belgyógyászati és Onkológiai Klinika", bio: "A Magyar Tudományos Akadémia hosszú ideig regnáló elnöke, a nyirokkeringés élettani kutatója." },
-
-            { name: "Dr. Schaffer Károly", years: "1864 – 1939", dept: "Neurológiai Klinika", bio: "A magyar agykutatás és idegkórtan kimagasló professzora, szövettani kutató." },
-
-            { name: "Semmelweis Ignác", years: "1818 – 1865", dept: "Szülészeti és Nőgyógyászati Klinika", bio: "Az 'anyák megmentője', a gyermekágyi láz okának felfedezője és a klórvizes kézmosási antiseptikum úttörője." }
-
+            // 20 Standard professzor (featured: false)
+            { id: "barta", name: "Dr. Barta Lajos", years: "1912 – 2000", dept: "Gyermekgyógyászati Klinika", featured: false, img: "kepek/barta_lajos.jpg", bio: "Kiemelkedő gyermekgyógyász, a gyermekkori endokrinológia és metabolikus betegségek szakértője." },
+            { id: "banoczy", name: "Dr. Bánóczy Jolán", years: "1929 – 2016", dept: "Fogorvostudományi Kar", featured: false, img: "kepek/banoczy_jolan.jpg", bio: "A Fogorvostudományi Kar korábbi dékánja, az orális medicina nemzetközi hírű professzora." },
+            { id: "barsony", name: "Dr. Bársony János", years: "1860 – 1926", dept: "Szülészeti és Nőgyógyászati Klinika", featured: false, img: "kepek/barsony_janos.jpg", bio: "Szülész-nőgyógyász professzor, az operatív szülészet elismert képviselője." },
+            { id: "bene", name: "Bene Ferenc", years: "1775 – 1858", dept: "Különös kór- és gyógytan", featured: false, img: "kepek/bene_ferenc.jpg", bio: "Orvosdoktor, egyetemi tanár, a himlőoltás hazai elterjesztője." },
+            { id: "berentey", name: "Dr. Berentey György", years: "1925 – 2004", dept: "Traumatológiai Klinika", featured: false, img: "kepek/berentey_gyorgy.jpg", bio: "A hazai traumatológia és baleseti sebészet iskolateremtő professzora." },
+            { id: "berenyi", name: "Dr. Berényi Béla", years: "1911 – 2005", dept: "Fogorvostudományi Kar", featured: false, img: "kepek/berenyi_bela.jpg", bio: "A szájsebészet és fogászat professzora, szakkönyvek szerzője." },
+            { id: "bekefi", name: "Dr. Békefi Dezső", years: "1941 – 2024", dept: "Gyermekgyógyászati Klinika", featured: false, img: "kepek/bekefi_dezso.jpg", bio: "Elismert gyermekgyógyász és neonatológus, a koraszülött-ellátás szakértője." },
+            { id: "blaskovics", name: "Dr. Blaskovics László", years: "1869 – 1938", dept: "Szemészeti Klinika", featured: false, img: "kepek/blaskovics_laszlo.jpg", bio: "Világhírű szemész professzor, a szemhéj- és plasztikai műtétek újítója." },
+            { id: "boros", name: "Dr. Boros Sándor", years: "1907 – 1987", dept: "Fogorvostudományi Kar", featured: false, img: "kepek/boros_sandor.jpg", bio: "Fogorvos professzor, a konzerváló fogászat és protetika oktatója." },
+            { id: "bokai_jun", name: "Dr. Bókai János jun.", years: "1858 – 1937", dept: "Gyermekgyógyászati Klinika", featured: false, img: "kepek/bokai_janos_jun.jpg", bio: "A gyermekklinika igazgatója, a modern magyar gyermekgyógyászat meghatározó alakja." },
+            { id: "bokai_sen", name: "Dr. Bókai János sen.", years: "1822 – 1884", dept: "Gyermekgyógyászati Klinika", featured: false, img: "kepek/bokai_janos_sen.jpg", bio: "A Stefánia Gyermekkórház megalapítója és a gyermekkórtan első egyetemi tanára." },
+            { id: "clauder", name: "Dr. Clauder Ottó", years: "1907 – 1985", dept: "Gyógyszerészi Szerves Vegytan", featured: false, img: "kepek/clauder_otto.jpg", bio: "Kiváló gyógyszerészvegyész, a gyógyszerészi szerves kémiai kutatások vezetője." },
+            { id: "csaba", name: "Dr. Csaba György", years: "1929 – 2020", dept: "Molekuláris Biológiai Tanszék", featured: false, img: "kepek/csaba_gyorgy.jpg", bio: "Nemzetközileg elismert humánbiológus, a hormonális receptorok kutatója." },
+            { id: "cserhati", name: "Dr. Cserháti Endre", years: "1932 – 2025", dept: "Gyermekgyógyászati Klinika", featured: false, img: "kepek/cserhati_endre.jpg", bio: "A gyermekkori allergológia és pulmonológia hazai úttörője." },
+            { id: "csiba", name: "Dr. Csiba Árpád", years: "1928 – 2004", dept: "Fogorvostudományi Kar", featured: false, img: "kepek/csiba_arpad.jpg", bio: "A szájpatológia és fogászati kórbonctan elismert professzora." },
+            { id: "csomor", name: "Dr. Csömör Sándor", years: "1919 – 2007", dept: "Szülészeti és Nőgyógyászati Klinika", featured: false, img: "kepek/csomor_sandor.jpg", bio: "A I. sz. Szülészeti és Nőgyógyászati Klinika volt igazgatója." },
+            { id: "denes", name: "Dr. Dénes József", years: "1939 – 1999", dept: "Fogorvostudományi Kar", featured: false, img: "kepek/denes_jozsef.jpg", bio: "A gyermekfogászat és fogszabályozás elismert oktatója." },
+            { id: "entz", name: "Dr. Entz László", years: "1951 – 2023", dept: "Érsebészeti Tanszék", featured: false, img: "kepek/entz_laszlo.jpg", bio: "Nemzetközileg elismert érsebész professzor, a rekonstrukciós érsebészet szaktekintélye." },
+            { id: "fabian_g", name: "Dr. Fábián Gábor", years: "1962 – 2016", dept: "Fogorvostudományi Kar", featured: false, img: "kepek/fabian_gabor.jpg", bio: "A gyermekfogászati és fogszabályozási klinika elhivatott oktatója." },
+            { id: "fabian_t", name: "Dr. Fábián Tibor", years: "1934 – 2019", dept: "Fogorvostudományi Kar", featured: false, img: "kepek/fabian_tibor.jpg", bio: "A Fogpótlástani Klinika volt igazgatója, a fogászati protetika professzora." }
         ];
 
- 
+        let currentFilter = 'all';
 
-        // --- Csempék dinamikus kirajzolása ---
-
-        const grid = document.getElementById('cardGrid');
-
- 
-
-        function renderCards(data) {
-
-            grid.innerHTML = '';
-
-            data.forEach((doc, index) => {
-
-                const card = document.createElement('div');
-
-                card.className = 'card';
-
-                card.onclick = () => openModal(doc);
-
-                card.innerHTML = `
-
-                    <div>
-
-                        <h3>${doc.name}</h3>
-
-                        <div class="years">${doc.years}</div>
-
-                        <div class="dept">${doc.dept}</div>
-
+        // Kártya HTML generálása
+        function createCardHTML(doc) {
+            return `
+                <div class="card ${doc.featured ? 'featured' : ''}" onclick="openModal('${doc.id}')">
+                    ${doc.featured ? '<div class="badge">★ KIEMELT</div>' : ''}
+                    <img src="${doc.img}" alt="${doc.name}" class="card-img" onerror="this.src='https://via.placeholder.com/75x95?text=Portré'">
+                    <div class="card-content">
+                        <div>
+                            <h3>${doc.name}</h3>
+                            <div class="years">${doc.years}</div>
+                            <div class="dept">${doc.dept}</div>
+                        </div>
+                        <div class="btn">Részletes szócikk ➔</div>
                     </div>
-
-                    <div class="btn">Részletes szócikk ➔</div>
-
-                `;
-
-                grid.appendChild(card);
-
-            });
-
+                </div>
+            `;
         }
 
- 
+        // --- Tartalom Kirajzolása (Szekcionálva) ---
+        function renderContent(data) {
+            const contentArea = document.getElementById('contentArea');
+            contentArea.innerHTML = '';
 
-        // --- Keresési funkció ---
+            const featuredDocs = data.filter(d => d.featured);
+            const regularDocs = data.filter(d => !d.featured);
+
+            // Ha az "Összes" van kiválasztva ÉS nincs keresési kifejezés: Külön blokkokban jelennek meg
+            const isSearching = document.getElementById('searchInput').value.trim().length > 0;
+
+            if (currentFilter === 'all' && !isSearching) {
+                // 1. Kiemeltek szekciója
+                if (featuredDocs.length > 0) {
+                    contentArea.innerHTML += `
+                        <div class="section-title">★ Kiemelt professzorok (${featuredDocs.length})</div>
+                        <div class="grid">${featuredDocs.map(createCardHTML).join('')}</div>
+                    `;
+                }
+                // 2. Többi professzor szekciója
+                if (regularDocs.length > 0) {
+                    contentArea.innerHTML += `
+                        <div class="section-title regular-title">Minden szócikk (${regularDocs.length})</div>
+                        <div class="grid">${regularDocs.map(createCardHTML).join('')}</div>
+                    `;
+                }
+            } else {
+                // Kereséskor vagy külön szűréskor egyetlen közös rács
+                if (data.length === 0) {
+                    contentArea.innerHTML = '<p style="text-align:center; padding: 2rem; color: #666;">Nincs a keresésnek megfelelő találat.</p>';
+                } else {
+                    contentArea.innerHTML = `<div class="grid">${data.map(createCardHTML).join('')}</div>`;
+                }
+            }
+        }
+
+        // --- Szűrés és Keresés ---
+        function setFilter(filterType) {
+            currentFilter = filterType;
+            document.getElementById('btnAll').classList.toggle('active', filterType === 'all');
+            document.getElementById('btnFeatured').classList.toggle('active', filterType === 'featured');
+            filterCards();
+        }
 
         function filterCards() {
-
             const query = document.getElementById('searchInput').value.toLowerCase();
+            
+            const filtered = doctors.filter(doc => {
+                const matchesQuery = doc.name.toLowerCase().includes(query) || doc.dept.toLowerCase().includes(query);
+                const matchesFilter = (currentFilter === 'all') || (currentFilter === 'featured' && doc.featured);
+                return matchesQuery && matchesFilter;
+            });
 
-            const filtered = doctors.filter(d =>
-
-                d.name.toLowerCase().includes(query) ||
-
-                d.dept.toLowerCase().includes(query)
-
-            );
-
-            renderCards(filtered);
-
+            renderContent(filtered);
         }
-
- 
 
         // --- Modális ablak kezelése ---
+        function openModal(docId) {
+            const doc = doctors.find(d => d.id === docId);
+            if (!doc) return;
 
-        function openModal(doc) {
-
-            document.getElementById('modalTitle').innerText = doc.name;
-
-            document.getElementById('modalYears').innerText = doc.years;
-
-            document.getElementById('modalDept').innerText = doc.dept;
-
-            document.getElementById('modalBody').innerHTML = `<p>${doc.bio}</p>`;
-
-            document.getElementById('modalOverlay').classList.add('active');
-
-        }
-
- 
-
-        function closeModal() {
-
-            document.getElementById('modalOverlay').classList.remove('active');
-
-        }
-
- 
-
-        function closeModalOutside(event) {
-
-            if (event.target.id === 'modalOverlay') {
-
-                closeModal();
-
+            const container = document.getElementById('modalContainer');
+            if (doc.featured) {
+                container.classList.add('featured-modal');
+            } else {
+                container.classList.remove('featured-modal');
             }
 
+            document.getElementById('modalTitle').innerText = doc.name;
+            document.getElementById('modalYears').innerText = doc.years;
+            document.getElementById('modalDept').innerText = doc.dept;
+            document.getElementById('modalBody').innerHTML = `<p>${doc.bio}</p>`;
+            
+            const modalImg = document.getElementById('modalImg');
+            modalImg.src = doc.img;
+            modalImg.onerror = () => { modalImg.src = 'https://via.placeholder.com/120x150?text=Portré'; };
+
+            document.getElementById('modalOverlay').classList.add('active');
         }
 
- 
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+        }
+
+        function closeModalOutside(event) {
+            if (event.target.id === 'modalOverlay') {
+                closeModal();
+            }
+        }
 
         // Kezdeti kirajzolás
-
-        renderCards(doctors);
-
+        renderContent(doctors);
     </script>
-
 </body>
-
 </html>
