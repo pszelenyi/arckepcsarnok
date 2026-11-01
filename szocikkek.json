@@ -379,17 +379,7 @@
     "docx_file": "Garzó Tamás (Molekuláris Biológiai Tanszék).docx",
     "bio": "<p><b>Garzó Tamás (1924 – 2009) biokémikus</b></p><p><b>Intézmény:</b><br>Orvosi Vegytani Intézet és jogutódjai (1949–2004).</p><p><b>Munkássága:</b><br>Egyik alapító tagja volt az Intézetnek, megalapította az orvosi kémia oktatását a fogorvosképzésben, és a tantárgy tanszéki előadójaként évtizedekig volt a Fogorvostudományi Kar Kari Tanácsának tagja. 1983-ban alapító tagja volt a német nyelvű orvosképzést bevezető háromtagú egyetemi operatív bizottságnak. Magyarországon ő végezte az első olyan biokémiai kísérletet, amelyben radioaktív izotóp felhasználásával követtek nyomon anyagcserefolyamatokat. Straub F. Brunó egyik legfontosabb segítőjeként vezető szerepe volt a Magyarországon először a Semmelweis Egyetemen az orvosi kémia oktatásban bevezetett „multiple choice” feleletválogatós írásbeli vizsgáztatás alkalmazásában. Húsz éven keresztül ő tartotta az Intézet összes német nyelvű orvosi kémia előadását.</p>"
   },
-  {
-    "id": "gaal",
-    "name": "Dr. Gaál Mihály",
-    "years": "1934 – 2006",
-    "dept": "Egészségügyi Közszolgálati Kar",
-    "featured": false,
-    "img": "kepek/gaal_mihaly.jpg",
-    "docx_file": "Gaál Mihály (Egészségügyi Közszolgálati Kar, Egészségügyi Menedzserképző Központ).docx",
-    "bio": "<p><b>Gaál Mihály (Budapest, 1934. június 26. – Budapest, 2006. július 14.) okleveles építészmérnök</b></p><p><b>Intézmények:</b><br>Beruházási és Felújítási Osztály, osztályvezető (1981–1996); 1996–2006: Semmelweis Egyetem Egészségügyi Menedzserképző Központ munkatársa.</p><p><b>Kiemelkedő tevékenységei, munkássága:</b><br>1957-ben végzett a BME Építészmérnöki Karán. Számos ikonikus középület létrejöttében játszott szerepet (pl. Hotel Hilton, Körszálló, Várszínház, Planetárium, Skála Nagyáruház). 1981-től a SOTE Beruházási és Felújítási osztályvezetőjeként a Klinikai tömb rekonstrukciós program keretében induló több klinika és épület felújításában, létrejöttében játszott meghatározó szerepet (Pszichiátriai és Neurológiai Klinika, Urológiai Klinika, Transzplantációs Klinika, Fogorvosi Klinika, Szemészeti Klinika, Diagnosztikai Tömb, Központi épületek). Az Egészségügyi Menedzserképző Központ alapítóiként felkérték az Intézet épületének kialakítására (Kútvölgyi út).</p><p><b>Közéleti tisztségei, díjai:</b><br>Tagja volt az Építész Kamarának, a Magyar Építőművészek Szövetségének. Eötvös Lóránd díjban részesült a gipszkarton rendszerek magyarországi bevezetéséért.</p>"
-  },
-  {
+   {
     "id": "gefferth",
     "name": "Dr. Gefferth Károly",
     "years": "1901 – 1992",
@@ -619,17 +609,7 @@
     "docx_file": "Hámori József (Anatómiai, Szövet- és Fejlődéstani Intézet) (hiányos!).docx",
     "bio": "<p><b>Hámori József (1932 – 2021) biológus, akadémikus, egyetemi tanár, miniszter</b></p><p><b>Intézmény:</b><br>Munkássága több egyetemhez kötődik; a JPTE rektora (1992–1994), a Semmelweis Egyetem Anatómiai, Szövet- és Fejlődéstani Intézetének tudományos tanácsadója (1963–2021).</p><p><b>Munkássága:</b><br>Szentágothai János egyik legközelebbi munkatársa. Megalapította és vezette az Intézet elektronmikroszkópos laboratóriumát. Meghatározó szerepet játszott a kisagy szinaptikus szerkezetét feltáró kutatásokban, a Nobel-díjas John Eccles-szel együttműködve.</p><p><b>Tisztségei, díjai:</b><br>MTA alelnöke (2002–2008), nemzeti kulturális örökség minisztere (1998–1999). Széchenyi-díj (1994), UNESCO aranyérem (1999).</p>"
   },
-  {
-    "id": "hari",
-    "name": "Dr. Hári Mária",
-    "years": "1923 – 2001",
-    "dept": "Pető András Kar",
-    "featured": false,
-    "img": "kepek/hari_maria.jpg",
-    "docx_file": "Hári Mária (Pető András Kar).docx",
-    "bio": "<p><b>Dr. Hári Mária (Budapest, 1923. augusztus 26. – Budapest, 2001. október 6.) orvos, gyógypedagógus, a Mozgássérültek Pető András Nevelőképző és Nevelőintézetének igazgatója</b></p><p><b>Kiemelkedő tevékenységei, munkássága:</b><br>1945-ben ismerte meg Dr. Pető Andrást, akinek munkájába bekapcsolódott. Pető András 1967-ben bekövetkezett halálát követően a Mozgássérültek Nevelőképző és Nevelőintézetének főigazgatója lett (1994-ig). Vezetése alatt vált a konduktív pedagógia világszerte ismertté és elismertté. Dr. Hári Máriának köszönhető, hogy a konduktorképzés a felsőoktatási rendszer részévé vált.</p><p><b>Díjai:</b><br>Állami-díj (1983), A Magyar Érdemrend középkeresztje (1994), Szent-Györgyi Albert-díj (1996), Doctor Honoris Causa (University of Birmingham).</p>"
-  },
-  {
+   {
     "id": "huttl",
     "name": "Dr. Hüttl Kálmán",
     "years": "1955 – 2019",
